@@ -1,0 +1,22 @@
+
+.center{
+    text-align: center;
+}
+
+.catalog {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+
+.card img {
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto 0 auto;
+}
+
+.itemPrice {
+    color: rgb(167, 37, 37);
+    font-size: 2rem;
+}
