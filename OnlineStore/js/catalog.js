@@ -9,7 +9,7 @@ window.onload=init;
 function fetchData(){
     // get data from server
     // use object literal
-    catalog=[
+    /*catalog=[
         {
             code:"001",
             title:"Iphone 11",
@@ -31,7 +31,27 @@ function fetchData(){
             category:"Sound",
             img:"https://http2.mlstatic.com/audifonos-skullcandy-gi-dj-modelos-unicos-coleccionables-D_NQ_NP_340011-MLM20461578896_102015-F.jpg"
         }
-    ]
+    ]*/
+    $.ajax({
+        url: "http://restclass.azurewebsites.net/api/points",
+        type: "GET",
+        success:function(allItems){
+            console.log(allItems);
+            
+            //travel the array
+            //check my user
+            //push my items into the array
+            allItems.forEach(item=>{
+                if(item.user === "Ivan"){
+                    catalog.push(item);
+                }
+            })
+            displayCatalog();
+        },
+        error:function(details){
+            console.log("Eroor getting data ", details);
+        }
+    });
 }
 
 function displayCatalog(){
@@ -42,7 +62,7 @@ function displayCatalog(){
 
         var  syntax = `
         <div id = "${item.code}" class="card center">
-            <img src="${item.img}" class="card-img-top center" alt="img">
+            <img src="${item.image}" class="card-img-top center" alt="img">
             <div class="card-body">
                 <h5 class="card-title">${item.title}</h5>
             </div>
