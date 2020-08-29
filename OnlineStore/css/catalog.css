@@ -3,12 +3,18 @@
     text-align: center;
 }
 
-.catalog {
+.catalog-container {
+    width: 100%;
+    margin: 0 1rem 0 4rem;
+}
+
+#catalog {
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
     column-gap: 10px;
     row-gap: 15px;
 }
+
 
 .card img {
     width: 20rem;
@@ -19,4 +25,10 @@
 .itemPrice {
     color: rgb(167, 37, 37);
     font-size: 2rem;
+}
+
+
+.flex-container {
+    display: flex;
+    margin: 0;
 }

@@ -25,7 +25,7 @@ function init() {
 
 window.onload=init;
 
-function clear() {
+function clearForm() {
     $("#code").val("");
     $("#title").val("");
     $("#price").val("");
@@ -80,11 +80,15 @@ function register() {
         contentType: "application/json",
         success:function(response){
             console.log("Yeiii ", response);
+            $("#alert-box").removeClass("hidden");
+            setTimeout(function(){
+                $("#alert-box").addClass("hidden");
+            },3000);
+
         },
         error:function(errorDetails){
             console.log("Ouuch! ", errorDetails);
         }
     });
-
-
+    clearForm();
 }
